@@ -28,19 +28,19 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'index' %}"><i class="fas fa-home"></i>  Home</a>
+                        <a class="nav-link {% if request.path == '/' %} active {% endif %}" href="{% url 'index' %}"><i class="fas fa-home"></i>  Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'sites' %}"><i class="fas fa-landmark"></i>  Sites</a>
+                        <a class="nav-link {% if request.path == '/sites/' %} active {% endif %}" href="{% url 'sites' %}"><i class="fas fa-landmark"></i>  Sites</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'listoffood' %}"><i class="fas fa-utensils"></i>  Foods & Drinks</a>
+                        <a class="nav-link {% if request.path == '/listoffood/' %} active {% endif %}" href="{% url 'listoffood' %}"><i class="fas fa-utensils"></i>  Foods & Drinks</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i>  Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-regular fa-map"></i>  Tourism Services</a>
+                        <a class="nav-link {% if request.path == '/tourism_services/' %} active {% endif %}" href="{% url 'tourism_services' %}"><i class="fa-regular fa-map"></i>  Tourism Services</a>
                     </li>
                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="blogsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from django.utils import timezone
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
@@ -124,3 +125,32 @@ class Sites(models.Model):
     def __str__(self):
         return self.name
     
+class Transportation(models.Model):
+    name = models.CharField(max_length=100)
+    photo=models.ImageField(upload_to='img', blank=True, null=True)
+    description=models.TextField(blank=True, null=True)
+    phone=PhoneNumberField(region='NP',null=True,blank=True)
+    link=models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+    
+class Accomodation(models.Model):
+    name = models.CharField(max_length=100)
+    photo=models.ImageField(upload_to='img', blank=True, null=True)
+    description=models.TextField(blank=True, null=True)
+    phone=PhoneNumberField(region='NP',null=True,blank=True)
+    link=models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+    
+class TourGuides(models.Model):
+    name = models.CharField(max_length=100)
+    photo=models.ImageField(upload_to='img', blank=True, null=True)
+    description=models.TextField(blank=True, null=True)
+    phone=PhoneNumberField(region='NP',null=True,blank=True)
+    link=models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name

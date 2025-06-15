@@ -406,3 +406,11 @@ def site_detail(request, id):
         }
         
     return render(request, 'sites/site_detail.html', context)
+
+# _____________________________________________tourism services________________________________________________
+
+def tourism_services(request):
+    transportation=Transportation.objects.all()
+    accomodation=Accomodation.objects.all()
+    tourguides=TourGuides.objects.all()
+    return render(request,'tourism_services/tourism_services.html',{'transportation':transportation,'accomodation':accomodation,'tourguides':tourguides})

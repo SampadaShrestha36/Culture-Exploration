@@ -32,9 +32,13 @@ urlpatterns = [
     path('restaurant/<int:id>',restaurant,name='restaurant'),
     # food urls ends here
 
-    # sites starts first here
+    # sites starts starts here
     path('sites/',listofsites,name='sites'),
     path('site_detail/<int:id>',site_detail,name='site_detail'),
     # sites ends here
+
+    # tourism services starts here
+    path('tourism_services/',tourism_services,name='tourism_services'),
+    # tourism services ends here
 ]
 
